@@ -9,21 +9,6 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [
-  // Keep existing Next.js and TypeScript config
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
-
-  // Add the new ESLint configurations you need
-  "standard",
-  "plugin:tailwindcss/recommended",
-  "prettier",
-
-  // Add custom rules
-  {
-    rules: {
-      "no-undef": "off", // Custom rule to turn off "no-undef"
-    },
-  },
-];
+const eslintConfig = [...compat.extends("next/core-web-vitals")];
 
 export default eslintConfig;
